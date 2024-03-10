@@ -16,18 +16,23 @@ if (layout === `"image description"`) {
 } else {
   columnLayout = "4fr 6fr";
 }
+
+// make the space of project.title into dash
+const projectLink = project.title.replace(/\s/g, "-").toLowerCase();
 ---
 
 <div class="project-container">
-  <div class="project-image-container">
+  <a href={projectLink} class="project-image-container">
     <slot />
-  </div>
-  <div class="project-description-container">
-    <p class="project-type">{project.type}</p>
-    <h3 class="project-title">{project.title}</h3>
-    <p class="project-description">
-      {project.description}
-    </p>
+  </a>
+  <div class="project-info-section">
+    <a href={projectLink} class="project-description-container">
+      <p class="project-type">{project.type}</p>
+      <h3 class="project-title">{project.title}</h3>
+      <p class="project-description">
+        {project.description}
+      </p>
+    </a>
     <div class="project-tags">
       {project.tags.map((tag) => <span class="project-tag">{tag}</span>)}
     </div>
@@ -36,15 +41,19 @@ if (layout === `"image description"`) {
   <style define:vars={{ layout, columnLayout }}>
     .project-image-container {
       position: relative;
+      display: block;
       width: 100%;
       overflow: hidden;
+      cursor: none;
     }
-    .project-description-container {
+    .project-info-section {
       margin-top: 1.15rem;
       margin-bottom: 1.72rem;
-
+    }
+    .project-description-container {
       display: grid;
-      grid-template-rows: auto auto auto 1fr;
+      grid-template-rows: auto auto auto;
+      cursor: none;
     }
     .project-type {
       font-size: clamp(0.75rem, 2vw, 1rem);
@@ -75,7 +84,8 @@ if (layout === `"image description"`) {
     .project-tag {
       display: inline-block;
       padding: 0.1875rem 0.5rem;
-      border: 1px solid #000;
+      border: 1px solid var(--color-neutral);
+      border-radius: 2rem;
 
       font-size: 0.75rem;
       font-weight: 300;
@@ -95,19 +105,24 @@ if (layout === `"image description"`) {
         align-self: center;
         grid-area: image;
       }
-
-      .project-description-container {
-        align-self: first baseline;
-        grid-area: description;
+      .project-info-section {
         margin: 0;
         height: 100%;
+        align-self: first baseline;
+        grid-area: description;
 
         display: flex;
         flex-direction: column;
       }
-      .project-description {
+      .project-description-container {
+        margin: 0;
+        height: 100%;
         flex-grow: 2;
+
+        display: flex;
+        flex-direction: column;
       }
+
       .project-tag {
         font-size: 0.8rem;
       }

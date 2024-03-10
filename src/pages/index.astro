@@ -66,15 +66,7 @@ const contact = [
       </div>
       <h1 class="title">PRODUCT DESIGNER</h1>
       <div class="big-fold-bottom">
-        <div class="hero-containter">
-          <script
-            type="module"
-            src="https://unpkg.com/@splinetool/viewer@1.0.55/build/spline-viewer.js"
-          ></script>
-          <spline-viewer
-            url="https://prod.spline.design/rrBSo7orZPhGzP7R/scene.splinecode"
-          ></spline-viewer>
-        </div>
+        <div class="hero-containter"></div>
         <div class="fold-bottom-section">
           <div class="time-container">
             <span class="time-label">Local Time →</span>
@@ -93,7 +85,7 @@ const contact = [
         </div>
       </div>
     </section>
-    <section class="fold fold-projects">
+    <section id="work" class="fold fold-projects">
       <h2 class="title title-projects">SELECTED PROJECT</h2>
       <Project project={projects[0]}>
         <Picture

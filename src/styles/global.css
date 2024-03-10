@@ -1,33 +1,40 @@
-  :root {
-      --color-neutral: #FDF9F1;
-      --color-black: #2E2D27;
-      --color-primary: #9D9583;
-      --color-secondary: #0c58d8;
-  }
+:root {
+    --color-neutral: #FDF9F1;
+    --color-black: #2E2D27;
+    --color-primary: #9D9583;
+    --color-secondary: #0c58d8;
+}
 
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  ul,
-  ol {
-      list-style: none;
-  }
+ul,
+ol {
+    list-style: none;
+}
 
-  a {
-      text-decoration: none;
-      color: inherit;
-  }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-  html {
-      font-family: "Helvetica Now Text", "Helvetica neue", Helvetica, Montserrat,
-          system-ui, sans-serif;
-  }
+html {
+    font-family: "Helvetica Now Text", "Helvetica neue", Helvetica, Montserrat,
+    system-ui, sans-serif;
+}
 
-  body {
-      background-color: var(--color-neutral);
+body {
+    background-color: var(--color-black);
+    color: var(--color-neutral);
+    position: relative;
+}
 
-      position: relative;
-  }
+@media (prefer-color-scheme: auto) {
+    body {
+        background-color: var(--color-neutral);
+        color: var(--color-black);
+    }
+}
