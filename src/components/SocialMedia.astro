@@ -3,13 +3,25 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div class="social-media-container">
-  <a href="https://www.linkedin.com/in/haoweikao" class="social-media">
+  <a
+    href="https://www.linkedin.com/in/haoweikao"
+    aria-label="linkedin"
+    class="social-media"
+  >
     <Icon name="linkedin" />
   </a>
-  <a href="https://twitter.com/daniel_newheart" class="social-media">
+  <a
+    href="https://twitter.com/daniel_newheart"
+    aria-label="twitter"
+    class="social-media"
+  >
     <Icon name="twitterX" />
   </a>
-  <a href="https://www.instagram.com/daniel_newheart" class="social-media">
+  <a
+    href="https://www.instagram.com/daniel_newheart"
+    aria-label="instagram"
+    class="social-media"
+  >
     <Icon name="instagram" />
   </a>
 </div>
@@ -20,7 +32,9 @@ import { Icon } from "astro-icon/components";
     flex-direction: row;
     gap: 1.5rem;
   }
-
+  [data-icon] {
+    color: var(--color-neutral);
+  }
   @media (min-width: 52rem) {
     .social-media-container {
       flex-direction: column;

@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Project from "../components/Project.astro";
+
 import SocialMedia from "../components/SocialMedia.astro";
 import noise from "../images/noise.png";
 import GradientCircle from "../components/GradientCircle.astro";
-
-import Project from "../components/Project.astro";
-import Footer from "../components/Footer.astro";
+import CurrentTime from "../components/CurrentTime";
+import CopyEmailButton from "../components/CopyEmailButton.astro";
 
 import { Picture } from "astro:assets";
 import { Icon } from "astro-icon/components";
@@ -31,29 +33,6 @@ const projects = [
     layout: "image description",
   },
 ];
-
-const contact = [
-  {
-    name: "Linkedin",
-    link: "https://www.linkedin.com/in/haoweikao",
-  },
-  {
-    name: "TwitterX",
-    link: "https://twitter.com/daniel_newheart",
-  },
-  {
-    name: "Instagram",
-    link: "https://www.instagram.com/daniel_newheart",
-  },
-  {
-    name: "Medium",
-    link: "https://medium.com/@danielkao_81775",
-  },
-  {
-    name: "Bento",
-    link: "https://bento.me/danielnewheart",
-  },
-];
 ---
 
 <Layout title="Hao-Wei Kao's Portfolio">
@@ -62,20 +41,19 @@ const contact = [
       <!-- <GradientCircle top="0%" left="46.19%" /> -->
       <div class="title-first-line">
         <div class="title-a">A</div>
-        <div class="title-hi">Hi! I am Hao-Wei Kao</div>
+        <h1 class="title-hi">Hi! I am Hao-Wei Kao</h1>
       </div>
-      <h1 class="title">PRODUCT DESIGNER</h1>
+      <div class="title">PRODUCT DESIGNER</div>
       <div class="big-fold-bottom">
         <div class="hero-containter"></div>
         <div class="fold-bottom-section">
           <div class="time-container">
             <span class="time-label">Local Time →</span>
-            <time class="current-time">11:41:24 AM</time>
+            <CurrentTime client:idle />
           </div>
           <!-- TODO -->
           <div class="email-container">
-            <a class="email" href="email" class="get-in-touch">→ Get in touch</a
-            >
+            <CopyEmailButton>→ Get in touch</CopyEmailButton>
             <SocialMedia />
           </div>
           <h2 class="intro">
@@ -94,6 +72,7 @@ const contact = [
           class="project-image image-guiding-angel"
           widths={[360, 540, 720, GuidingAngelImage.width]}
           sizes={`(max-width: 360px) 360px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${GuidingAngelImage.width}px`}
+          loading="eager"
         />
       </Project>
       <Project project={projects[1]}>
@@ -103,189 +82,219 @@ const contact = [
           class="project-image image-techfrog"
           widths={[360, 540, 720, Green.width]}
           sizes={`(max-width: 360px) 360px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${Green.width}px`}
+          loading="eager"
         />
         <div class="svg-container">
           <Icon name="techfrog-logo" />
         </div>
       </Project>
     </section>
-    <Footer contact={contact} />
+    <Footer />
   </main>
+</Layout>
 
-  <style define:vars={{ noiseURL: `url("${noise.src}")` }}>
+<style define:vars={{ noiseURL: `url("${noise.src}")` }}>
+  .fold {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 0 1.62rem;
+  }
+  .title-first-line {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: -2.5rem;
+    margin-top: -2.5rem;
+  }
+  .title-a {
+    font-size: clamp(6.25rem, 3.25rem + 7vw, 10.625rem);
+    font-style: normal;
+    font-weight: 400;
+  }
+  .title-hi {
+    font-weight: 300;
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    color: var(--color-primary);
+  }
+
+  .title {
+    font-size: clamp(3.2rem, 0.5692rem + 6vw, 4.625rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .hero-containter {
+    margin: 0 2rem;
+    height: 13.5rem;
+  }
+  .fold-bottom-section {
+    display: grid;
+    grid-template-areas: "time" "intro" "email";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  .time-container {
+    font-weight: 300;
+    font-size: 1.25rem;
+
+    grid-area: time;
+    align-self: end;
+    justify-self: end;
+  }
+  .email-container {
+    margin-top: 1.25rem;
+    grid-area: email;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .intro {
+    font-size: clamp(2rem, 0.5692rem + 3.5vw, 3rem);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: right;
+
+    grid-area: intro;
+  }
+  .title-projects {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+  .svg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 40%;
+  }
+  [data-icon="techfrog-logo"] {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Middle Version */
+  @media (min-width: 37.25rem) {
+    .email-container {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: end;
+    }
+  }
+  /* Desktop Version */
+  @media (min-width: 52rem) {
     .fold {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      padding: 0 1.62rem;
+      padding: 0 4.9rem;
     }
     .title-first-line {
-      display: flex;
-      align-items: baseline;
+      margin-top: -5rem;
       margin-bottom: -2.5rem;
-      margin-top: -2.5rem;
-    }
-    .title-a {
-      font-size: clamp(6.25rem, 3.25rem + 7vw, 10.625rem);
-      font-style: normal;
-      font-weight: 400;
     }
     .title-hi {
-      font-weight: 300;
-      font-size: 1rem;
-      font-style: italic;
-      letter-spacing: 0.05rem;
-      color: var(--color-primary);
+      font-size: 1.25rem;
+      letter-spacing: 0.15rem;
     }
-
     .title {
-      font-size: clamp(3.2rem, 0.5692rem + 6vw, 4.625rem);
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.1;
+      letter-spacing: -0.23125rem;
+      margin-left: -0.25rem;
+    }
+    .big-fold-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 2.5rem 0;
     }
     .hero-containter {
-      margin: 0 2rem;
-      height: 13.5rem;
+      width: 35vw;
+      height: 50vh;
     }
     .fold-bottom-section {
-      display: grid;
-      grid-template-areas: "time" "intro" "email";
-      grid-template-columns: auto 1fr;
       align-items: center;
+      gap: 0;
     }
     .time-container {
-      font-weight: 300;
-      font-size: 1.25rem;
-
-      grid-area: time;
-      align-self: end;
-      justify-self: end;
-    }
-    .email-container {
-      margin-top: 1.25rem;
-      grid-area: email;
-
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .email {
-      display: inline-block;
-      font-weight: 300;
-
-      /* border: 2px solid var(--color-second, #0c58d8); */
-      font-size: clamp(1.25rem, 0.5692rem + 3.5vw, 2rem);
+      font-size: 1.5rem;
+      line-height: 0.8;
+      margin-left: 0.15rem;
+      justify-self: start;
     }
     .intro {
-      font-size: clamp(2rem, 0.5692rem + 3.5vw, 3rem);
-      font-style: normal;
-      font-weight: 300;
-      line-height: 1.2;
-      text-align: right;
+      text-align: left;
+      letter-spacing: -0.1rem;
+    }
+    .email-container {
+      justify-self: end;
+      margin: 1.25rem 1.25rem 0 0;
+    }
+  }
 
-      grid-area: intro;
-    }
-    .title-projects {
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-    }
-    .project-image {
-      width: 100%;
-      height: auto;
-    }
-    .svg-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40%;
-      height: 40%;
+  /* Transition and Animation */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes rotateAnimation {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(-360deg);
+      }
     }
     [data-icon="techfrog-logo"] {
-      width: 100%;
-      height: 100%;
+      animation: rotateAnimation 30s linear infinite;
+    }
+  }
+
+  /* Extra-large Desktop */
+  @media (min-width: 67rem) {
+    .title-first-line {
+      margin-bottom: -3.5rem;
+    }
+  }
+
+  #replace-me {
+    color: #4353ff;
+  }
+
+  #replace-me:after {
+    content: "entrepreneur";
+    animation: spin 12s linear;
+    /* loop */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+
+  @keyframes spin {
+    0% {
+      content: "maker";
     }
 
-    /* Middle Version */
-    @media (min-width: 37.25rem) {
-      .email-container {
-        flex-direction: row;
-        align-items: baseline;
-        justify-content: end;
-      }
-    }
-    /* Desktop Version */
-    @media (min-width: 52rem) {
-      .fold {
-        padding: 0 4.9rem;
-      }
-      .title-first-line {
-        margin-top: -5rem;
-        margin-bottom: -2.5rem;
-      }
-      .title-hi {
-        font-size: 1.25rem;
-        letter-spacing: 0.15rem;
-      }
-      .title {
-        letter-spacing: -0.23125rem;
-        margin-left: -0.25rem;
-      }
-      .big-fold-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin: 2.5rem 0;
-      }
-      .hero-containter {
-        width: 35vw;
-        height: 50vh;
-      }
-      .fold-bottom-section {
-        align-items: center;
-        gap: 0;
-      }
-      .time-container {
-        font-size: 1.5rem;
-        line-height: 0.8;
-        margin-left: 0.15rem;
-        justify-self: start;
-      }
-      .intro {
-        text-align: left;
-        letter-spacing: -0.1rem;
-      }
-      .email-container {
-        justify-self: end;
-        margin: 1.25rem 1.25rem 0 0;
-      }
+    25% {
+      content: "entrepreneur";
     }
 
-    /* Transition and Animation */
-    @media (prefers-reduced-motion: no-preference) {
-      @keyframes rotateAnimation {
-        from {
-          transform: rotateY(0deg);
-        }
-        to {
-          transform: rotateY(-360deg);
-        }
-      }
-      [data-icon="techfrog-logo"] {
-        animation: rotateAnimation 30s linear infinite;
-      }
+    50% {
+      content: "founder";
     }
 
-    /* Extra-large Desktop */
-    @media (min-width: 67rem) {
-      .title-first-line {
-        margin-bottom: -3.5rem;
-      }
+    75% {
+      content: "creator";
     }
-  </style>
-</Layout>
+
+    100% {
+      content: "indie hacker";
+    }
+  }
+</style>

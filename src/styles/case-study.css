@@ -1,0 +1,450 @@
+body {
+    background-color: var(--color-purple);
+}
+p {
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    padding: 6rem 2.5rem 6rem 2.5rem;
+}
+.section--purple {
+    background-color: var(--color-purple);
+}
+.section--black {
+    background-color: var(--color-black);
+}
+.subsection {
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.subsection--interrupt {
+    padding-bottom: 0;
+}
+.subsection--context {
+    max-width: 53rem;
+    row-gap: 1rem;
+}
+.subsection--context p {
+    text-align: left;
+}
+.subsection--narrow-left {
+    max-width: 53rem;
+    text-align: left;
+}
+.subsection--narrow {
+    max-width: 53rem;
+}
+
+.tag-1 {
+    font-size: 0.90931rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.tag-2 {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 162.5%;
+    /* 2.03125rem */
+}
+.tag-2-bold {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.protfolio-title {
+    font-size: clamp(5rem, 5.5vw + 3.11rem, 7.25rem);;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.36994rem;
+    line-height: 1;
+
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.title-2 {
+    font-size: clamp(2rem, 10vw - 3rem, 3.25rem);
+    font-weight: 200;
+    /* 3.79169rem */
+    letter-spacing: -0.1625rem;
+}
+
+.title-4 {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116.667%;
+    /* 2.625rem */
+    text-transform: capitalize;
+    margin-bottom: 1.25rem;
+}
+.title-5 {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.65rem;
+    /* 110% */
+    text-transform: capitalize;
+}
+.paragraph-1 {
+    margin-bottom: 1rem;
+}
+.highlight {
+    font-weight: 700;
+}
+.quote {
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 116.667%;
+
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.image-container {
+    width: 100%;
+    max-width: 68rem;
+}
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+/* ------------------------------------- */
+/* hero section */
+.title-container {
+    max-width: 70rem;
+}
+.image-container--hero {
+    max-width: 60rem;
+}
+.hero-image-caption {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.info-items {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 1rem;
+    justify-content: left;
+}
+
+.info-item {
+    text-align: left;
+
+}
+.info-item__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Discovery----------------- */
+
+.image-container--competitive-analysis {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* User Research----------------- */
+.research-methods--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.72rem;
+    
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    max-width: 75rem;
+}
+.research-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.72rem;
+}
+.research-method {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.research-method--single {
+    margin-top: 20rem;
+}
+
+.research-method-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem;
+    text-align: left;
+}
+.research-method-description>p {
+    font-size: 1rem;
+}
+
+/* Insights----------------- */
+
+.insights {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    margin-top: 3rem;
+    margin-bottom: 2.5rem; 
+}
+.insight {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.image-container--insight {
+    align-self: center;
+    flex: 1 0 6vw;
+}
+.insight__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.hmw {
+    margin-top: 3.5rem;
+}
+
+/* Challenges----------------- */
+
+.image-container--challenges {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.caption {
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Before Design----------------- */
+
+.principles {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3.25rem;
+    margin-bottom: 3.25rem;
+    text-align: center;
+}
+.principle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 3rem 1.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.10);
+    flex-basis: 33%;
+}
+
+/* Solution ----------------- */
+
+.quote--introducing-guiding-angel {
+    padding: 3.25rem 0;
+}
+.image-container--solution-hero {
+    padding-left: 2rem;
+    max-width: 60rem;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+    align-items: center;
+}
+.image-container--feature {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+}
+.video {
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    z-index: 100;
+}
+.title-4--feature {
+    margin-bottom: .75rem;
+}
+.image-container--original-prototype {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    max-width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.video-original-prototype {
+    width: 100%;
+    height: auto;
+}
+.caption--original-prototype {
+    padding-top: 0;
+}
+
+/* How We Got There ----------------- */
+.iterations {
+    display: flex;
+    flex-direction: column;
+    gap: 3.25rem;
+    margin-top: 3.25rem;
+}
+.iteration {
+    max-width: 60rem;
+    padding: 3.5rem 3.2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.10);
+}
+.image-container--design-system {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 60rem;
+}
+
+/* Takeaway */
+.takeaway {
+    display: flex;
+    gap: 2rem;
+    
+    margin-top: 2rem;
+    max-width:60rem;
+}
+
+.takeaway-column-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.takeaway-item {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    text-align: left;
+}
+
+/* ------------------------------------- */
+@media (max-width: 45rem) {
+    section {
+        padding: 3rem 2rem 3rem 2rem;
+    }
+    .subsection {
+        padding-bottom: 3rem;
+    }
+    .feature {
+        margin-bottom: 2rem;
+    }
+    .quote {
+        font-size: 1.5rem;
+        padding: 2rem 0
+    }
+
+    .research-methods--container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+    .research-method--single {
+        margin-top: 0;
+    }
+
+    .insight {
+        flex-direction: column;
+        gap: .5rem;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .image-container--insight {
+        flex: none;
+        width: 15vw;
+    }
+
+    .principles {
+        flex-direction: column;
+    }
+
+    .takeaway {
+        flex-direction: column;
+    }
+}
+
+/* ------------------------------------- */
+
+@media (max-width: 30rem) {
+    p {
+        font-size: 1rem;
+    }
+    .tag-2 {
+        font-size: 1rem;
+    }
+    .tag-2-bold {
+        font-size: 1rem;
+    }
+    .title-2 {
+        font-size: 1.5rem;
+        letter-spacing: 0;
+    }
+    .title-4 {
+        font-size: 1.75rem;
+    }
+    .title-5 {
+        font-size: 1.25rem;
+    }
+    .info-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .info-item {
+        text-align: center;
+    }
+    .info-item>p {
+        text-align: center;
+    }
+    .caption {
+        font-size: 0.75rem;
+    }
+
+    .principle {padding: 2rem 1rem;}
+
+    .image-container--solution-hero {
+        padding-left: 1rem;
+    }
+
+    .iteration {
+     padding: 2rem 1.5rem;   
+    }
+}
+

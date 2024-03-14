@@ -5,5 +5,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), icon()]
+  integrations: [react(), icon()],
+  prefetch: {
+    defaultStrategy: 'viewport'
+  },
 });

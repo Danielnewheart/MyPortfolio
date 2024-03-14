@@ -1,0 +1,80 @@
+---
+
+---
+
+<button id="copyEmailButton">→ Get in touch</button>
+<div id="copySuccessMessage" class="copy-success-message">Email Copied</div>
+
+<style>
+  #copyEmailButton {
+    font-weight: 300;
+    font-size: clamp(1.25rem, 0.5692rem + 3.5vw, 2rem);
+    font-family: inherit;
+
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+  }
+
+  #copyEmailButton::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-neutral);
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: all 0.25s ease-in-out 0s;
+  }
+  #copyEmailButton:hover::before {
+    transform: scaleX(1);
+  }
+  /* -------------- */
+  .copy-success-message {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0s;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--color-neutral);
+    padding: 1rem;
+    border-radius: 2rem;
+    z-index: 1000;
+  }
+
+  .copy-success-message.show {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const email = "daniel19971016@gmail.com";
+    const copyButton = document.getElementById("copyEmailButton");
+    const successMessage = document.getElementById("copySuccessMessage");
+
+    copyButton.addEventListener("click", function () {
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          successMessage.classList.add("show");
+          setTimeout(() => {
+            successMessage.classList.remove("show");
+          }, 2500); // 顯示3秒後淡出
+        })
+        .catch((err) => {
+          console.error("Could not copy email: ", err);
+        });
+    });
+  });
+</script>

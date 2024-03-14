@@ -1,7 +1,626 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import "../styles/case-study.css";
+
+import hero from "../images/guiding-angel/hero.png";
+import competitiveAnalysisTable from "../images/guiding-angel/competitive-analysis-table.png";
+import userInterview from "../images/guiding-angel/user-interview.png";
+import picturesForAffinityMapping from "../images/guiding-angel/pictures-for-affinity-mapping.png";
+import persona from "../images/guiding-angel/persona.png";
+import keyInsight1 from "../images/guiding-angel/key-insight-1.png";
+import keyInsight2 from "../images/guiding-angel/key-insight-2.png";
+import keyInsight3 from "../images/guiding-angel/key-insight-3.png";
+import shotsOfBrainstorming from "../images/guiding-angel/shots-of-brainstorming.png";
+
+// import image solution-1 to solution-5
+import solutionHero from "../images/guiding-angel/solution-hero.png";
+import feature1 from "../images/guiding-angel/feature-1.png";
+import feature2 from "../images/guiding-angel/feature-2.png";
+import feature3 from "../images/guiding-angel/feature-3.png";
+import originalPrototype from "../images/guiding-angel/original-prototype.png";
+
+// import image iteration-1 to iteration-2
+import iteration1 from "../images/guiding-angel/iteration-1.png";
+import iteration2 from "../images/guiding-angel/iteration-2.png";
+
+import designSystem from "../images/guiding-angel/design-system.png";
+
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Hao-Wei Kao - Guiding Angel">
-  <p>Hello World</p>
+  <section class="section section--purple">
+    <div class="title-container">
+      <span class="tag-2">ACADEMIC PROJECT - DEC 2022</span>
+      <h1 class="protfolio-title">Guiding Angel</h1>
+      <h2 class="title-2">
+        A PARTNERSHIP COMMUNITY THAT TAIWANESE STUDENTS LACK
+      </h2>
+    </div>
+    <div class="image-container image-container--hero">
+      <Image
+        class="image"
+        src={hero}
+        alt="guiding-angel multiple mockups"
+        loading="eager"
+        widths={[360, 540, 720, 1280, hero.width]}
+        sizes={`(max-width: 540px) 360px, (max-width: 720px) 540px, (max-width: 1080px) 720px, (max-width: 1440px) 1280px, ${hero.width}`}
+      />
+      <p class="hero-image-caption tag-1">
+        I translated the original version into English version for this case
+        study.
+      </p>
+    </div>
+  </section>
+  <section class="section--black">
+    <div class="subsection subsection--context">
+      <h2 class="tag-2-bold">Context</h2>
+      <h3 class="quote">“Have you ever felt lost about your future career?”</h3>
+      <p>
+        This question is the beginning of this journey. At that time, most of my
+        friends and even I were experiencing such emotions. I found it was a
+        common issue for college students in Taiwan, so I brought this question
+        into a service design course. I collaborated with 6 teammates from
+        various majors. we used the service design methodology to research why
+        this psychological issue is commonly troubling college students and
+        tackle it.
+      </p>
+      <div class="info-items">
+        <div class="info-item">
+          <h4 class="info-item__title">Timeline</h4>
+          <p>Sep-Dec 2022</p>
+          <p>12 weeks</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-item__title">Role</h4>
+          <p>User Research</p>
+          <p>User Interviews</p>
+          <p>Service Design</p>
+          <p>Visual Design</p>
+          <p>Interaction Design</p>
+          <p>Prototyping</p>
+        </div>
+        <div class="info-item">
+          <h4 class="info-item__title">Tools</h4>
+          <p>Figma</p>
+          <p>Miro</p>
+          <p>ChatGPT3</p>
+        </div>
+      </div>
+    </div>
+    <div class="subsection subsection--narrow-left">
+      <h2 class="tag-2-bold">Problem</h2>
+      <h3 class="title-4">Starting From A Serious Educational Issue</h3>
+      <p class="paragraph-1">
+        Our goal of the project was to design a service to alleviate students’
+        anxiety about their future career. To be honest, it was a really huge
+        and intangible educational issue. We believed there were tons of
+        products and services trying to solve it,<span class="highlight">
+          but why do college students still feel lost?
+        </span> Apparently, there was a gap between current solutions and what do
+        we truly need. And that’s what we wanted to know.
+      </p>
+      <p>
+        To turn the vague problem into a specific, we started to conduct
+        competitive analysis and user interviews to discover more insights.
+      </p>
+    </div>
+    <div class=".subsection--interrupt subsection--narrow-left">
+      <h2 class="tag-2-bold">Discovery</h2>
+      <h3 class="title-4">
+        Services that offer both career orientation and personalization Were
+        rare
+      </h3>
+    </div>
+    <div class="image-container image-container--competitive-analysis">
+      <Image
+        class="image"
+        src={competitiveAnalysisTable}
+        alt="competitive analysis table"
+      />
+    </div>
+    <div class="subsection--narrow-left subsection--interrupt">
+      <p>
+        Initially, we did research on existing solutions. We found that while
+        some products and services help teenagers understand various academic
+        disciplines and careers, they lack personalization. Other solutions,
+        like workshops, offer more interaction and personalization but fail to
+        provide opportunities to communicate with real-world professionals. <span
+          class="highlight"
+        >
+        </span>
+        This result was only a reference for us to explore the market potential,
+        but we needed more insights to define the right problems.
+      </p>
+    </div>
+  </section>
+  <section class="section--purple">
+    <div class="subsection--interrupt subsection--narrow-left">
+      <h2 class="title-4">User Research</h2>
+      <p class="paragraph-1">
+        To obtain more insights from our target audience, we conducted user
+        research. To obtain higher quality data, we first defined the purpose of
+        the entire user research: <span class="highlight">
+          to understand why college students still feel lost and how they
+          explore their interest and career path.
+        </span> After the interviews, we arranged and categorized these behavioral
+        variables, and finally produced the user models.
+      </p>
+      <p>
+        PS: you will notice that I mostly use "we" instead of "I" here because
+        we worked as a group during the research phase. And I learned the
+        principles behind each research tool and understood why we could combine
+        them into a combo.
+      </p>
+    </div>
+
+    <div class="research-methods--container">
+      <div class="research-methods">
+        <div class="research-method">
+          <div class="image-container image-container--research">
+            <Image
+              class="image"
+              src={userInterview}
+              alt="User interview summary"
+            />
+          </div>
+          <div class="research-method-description">
+            <h3 class="title-5">Conducting User Interviews</h3>
+            <p>
+              We interviewed 15 college students from various majors, and
+              obtained many different perspectives, as each person's experience
+              varies greatly. Therefore, we kept going to uncover more findings
+            </p>
+          </div>
+        </div>
+        <div class="research-method">
+          <div class="image-container image-container--research">
+            <Image
+              class="image"
+              src={persona}
+              alt="User model analysis and persona"
+            />
+          </div>
+          <div class="research-method-description">
+            <h3 class="title-5">User Models and Persona</h3>
+            <p>
+              Based on the key values from the Affinity Map, we defined multiple
+              behavioral variables. Although we categorized four different user
+              groups from the interviewees, we focused on one model and created
+              the persona as the primary user for the project.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="research-methods">
+        <div class="research-method research-method--single">
+          <div class="image-container image-container--research">
+            <Image
+              class="image"
+              src={picturesForAffinityMapping}
+              alt="Multiple shots for brain dumping and affinity mapping"
+            />
+          </div>
+          <div class="research-method-description">
+            <h3 class="title-5">Brain Dumping & Affinity Mapping</h3>
+            <p>
+              I usually took on the role of facilitator, guiding discussions.
+              Back then, we were dealing with the COVID-19 pandemic. I think
+              that digitizing post-its would enhance our online discussions, so
+              I took the initiative to upload our raw data to Miro and
+              encouraged the team to join in this work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection subsection--narrow-left">
+      <p>
+        This research process focuses on effectively analyzing qualitative data,
+        and I believe it is very suitable for dissecting vague problems like our
+        original question and finding more precise directions.
+      </p>
+    </div>
+    <div class="subsectio--interrupt subsection--narrow-left">
+      <h2 class="tag-2-bold">Insights</h2>
+      <h3 class="title-4">Key Insights: importance of social support</h3>
+      <p>
+        Based on the user research and the persona, I was able to summarize the
+        following key insights.
+      </p>
+      <div class="insights">
+        <div class="insight">
+          <div class="image-container--insight">
+            <Image
+              class="image"
+              src={keyInsight1}
+              alt="icon representing Lack of Connection with Experienced People"
+            />
+          </div>
+          <div class="insight__description">
+            <h4 class="title-5 insight__title">
+              Lack of Connection with Experienced People
+            </h4>
+            <p>
+              Our users feel that current solutions that we talk before are not
+              very impactful. When attending career talks, there is no way to
+              directly ask all questions to those sharing their experiences or
+              knowledge, and the information is often not personalized.
+            </p>
+          </div>
+        </div>
+        <div class="insight">
+          <div class="image-container--insight">
+            <Image
+              class="image"
+              src={keyInsight2}
+              alt="icon representing Desire for Social Recognition"
+            />
+          </div>
+          <div class="insight__description">
+            <h4 class="title-5 insight__title">
+              Desire for Social Recognition
+            </h4>
+            <p>
+              Sense of achievement from society help students discover their
+              interests. They aspire to have careers that are not only
+              interesting to them but also be commended by society.
+            </p>
+          </div>
+        </div>
+        <div class="insight">
+          <div class="image-container--insight">
+            <Image
+              class="image"
+              src={keyInsight3}
+              alt="icon representing More community support"
+            />
+          </div>
+          <div class="insight__description">
+            <h4 class="title-5 insight__title">More community support</h4>
+            <p>
+              Interacting with peers can help them better understand their own
+              traits and the roles they play in a team. More importantly, the
+              support of friends and communities that gives them the courage to
+              step out of their comfort zones and explore more opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="paragraph-1">
+        It's not hard to see that <span class="highlight"
+          >these needs and desires are related to society and interpersonal
+          relationships.</span
+        > In addition, I was surprised that most interviewees did not face challenges
+        with learning resources, which may be a characteristic of this generation.
+        After thinking, we finally consolidated them into one question:
+      </p>
+      <p class="quote hmw">
+        “How might we make college students feel more personal support from
+        their community and society?”
+      </p>
+    </div>
+  </section>
+  <section class="section--black">
+    <div class="subsection--interrupt subsection--narrow-left">
+      <h2 class="tag-2-bold">Challenges</h2>
+      <h3 class="title-4">Tight Schedule and One UI Designer</h3>
+      <p class="paragraph-1">
+        We started to develop our solution based on that HMW. However, because
+        this course <span class="highlight"
+          >emphasizes learning user research methods</span
+        >, we only had about three weeks for ideation, prototyping, and
+        visualizing our design. Therefore, we just spent an afternoon in a
+        workshop with a service design mentor to sprint and ideate our solution.
+      </p>
+      <p class="paragraph-1">
+        After continuous discussions and brain writing, we imagined a community
+        platform that helps students form deeper connections with seniors who
+        have more work experience. Since I was the only one with experience in
+        UI design, I took charge of visual design and prototyping, while two
+        engineers were responsible for implementation.
+      </p>
+    </div>
+    <div class="image-container image-container--challenges">
+      <Image
+        class="image"
+        src={shotsOfBrainstorming}
+        alt="shots of brainstorming"
+      />
+      <div class="caption">
+        (Left and Right) Some shots of brainstorming sessions and the workshop.
+        (Middle) A sketch of storyboard.
+      </div>
+    </div>
+    <div class="subsection--narrow-left subsection--interrupt">
+      <h2 class="tag-2-bold">Before Design</h2>
+      <h3 class="title-4">Being Principled</h3>
+      <p class="paragraph-1">
+        Before I could jump into designing, it was important to define goals and
+        design principles as a smaller set of guiding values so that the best
+        decisions get made in a consistent manner. All rationales and key
+        features should align with these principles.
+      </p>
+      <p class="paragraph-1">
+        On the other hand, because this is a brand new product from 0 to 0.5, I
+        encouraged our team to view this design from an entrepreneurial
+        perspective. That is, we first defined the product's value proposition,
+        and then created a service blueprint to explore a preliminary product
+        architecture and service process.
+      </p>
+      <div class="principles">
+        <div class="principle">
+          <h4 class="principle__title title-5">Principle #1</h4><p
+            class="principle__description"
+          >
+            A delightful space that feels comforting
+          </p>
+        </div>
+        <div class="principle">
+          <h4 class="principle__title title-5">Principle #2</h4><p
+            class="principle__description"
+          >
+            To become partners who respect each other
+          </p>
+        </div>
+        <div class="principle">
+          <h4 class="principle__title title-5">Principle #3</h4><p
+            class="principle__description"
+          >
+            Value Co-creation: preserving and sharing
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--purple">
+    <div class="subsection--interrupt subsection--narrow">
+      <h2 class="tag-2-bold">Solution</h2>
+      <h3 class="title-4">Introducing Guiding Angel</h3>
+      <p class="quote quote--introducing-guiding-angel">
+        “Guiding Angel is a community platform where you can comfortably engage
+        in deep conversations and feel partnership and companionship. We help
+        college students find someone whom they can deeply discuss career and
+        life experiences with.”
+      </p>
+    </div>
+    <div class="image-container image-container--solution-hero">
+      <Image
+        class="image"
+        src={solutionHero}
+        alt="guiding-angel multiple mockups"
+        widths={[360, 540, 720, 1280, solutionHero.width]}
+        sizes={`(max-width: 540px) 360px, (max-width: 720px) 540px, (max-width: 1080px) 720px, (max-width: 1440px) 1280px, ${solutionHero.width}`}
+      />
+    </div>
+    <div class="feature subsection--narrow">
+      <h3 class="title-4 title-4--feature">Delightful Browsing Experience</h3>
+      <p class="feature-description">
+        Browsing experience is what we care about the most. Through a vertical
+        card set, you can browse through our recommended mentors or use the
+        search tool. We emphasize that <span class="highlight">
+          both successes and failures are valuable learning experiences.
+        </span> Therefore, our hashtags include many funny and unique terms. you
+        can find mentors who can share similar feelings and experiences with you.
+      </p>
+    </div>
+    <div class="feature subsection--narrow">
+      <div class="image-container image-container--feature">
+        <video
+          class="video"
+          autoplay
+          muted
+          controls
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/sign/videos/feature-1.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3MvZmVhdHVyZS0xLndlYm0iLCJpYXQiOjE3MTAyNzg2NjUsImV4cCI6NDg2Mzg3ODY2NX0.-ZKvf6qxhFHYzxaJe3mu1lwgFhDor11fzQn0rC_3P4I&t=2024-03-12T21%3A24%3A25.523Z"
+          loop
+          width="240"
+          height="492"
+        >
+          <Image
+            class="image"
+            src={feature1}
+            alt="Demo for Respect both your and the mentor's time feature"
+          />
+        </video>
+      </div>
+      <h3 class="title-4 title-4--feature">
+        Respect both your and the mentor's time
+      </h3>
+      <p class="feature-description">
+        We hope both mentors and mentees can gain valuable experience, so we've
+        established various ways to help both parties get to know each other
+        before starting the connection. Mentors provide their experiences and
+        stories, and mentees have to send an invitation with rich content and
+        wait for the mentor to accept.
+      </p>
+    </div>
+    <div class="feature subsection--narrow">
+      <div class="image-container image-container--feature">
+        <video
+          class="video"
+          autoplay
+          muted
+          controls
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/sign/videos/feature-2.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3MvZmVhdHVyZS0yLndlYm0iLCJpYXQiOjE3MTAyNzk1MjEsImV4cCI6NDg2Mzg3OTUyMX0.yRhlgu6czCUhwUWtQfOLkZp8x8CFBhzL5KIDJe4PHPw&t=2024-03-12T21%3A38%3A41.155Z"
+          loop
+          width="240"
+          height="492"
+        >
+          <Image
+            class="image"
+            src={feature2}
+            alt="Demo for Companionship feature"
+          />
+        </video>
+      </div>
+      <h3 class="title-4 title-4--feature">
+        Companionship: Get Ready for a coffee chat
+      </h3>
+      <p class="feature-description">
+        By 1-on-1 chats, user and mentor can make sure if they’d like to have
+        deeper interaction. We hope to provide users with a comfortable
+        experience. And if you’re ready, just use our built-in schedule tool to
+        send your coffee chat invitation!
+      </p>
+    </div>
+
+    <div class="feature subsection--narrow">
+      <div class="image-container image-container--feature">
+        <video
+          class="video"
+          autoplay
+          muted
+          controls
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/sign/videos/feature-3.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3MvZmVhdHVyZS0zLndlYm0iLCJpYXQiOjE3MTAyNzgzNDEsImV4cCI6NDg2Mzg3ODM0MX0.aS88I_V7k2o4YVvftlVPCgaQ_jAJYc-C0GSE-6qIHz4&t=2024-03-12T21%3A19%3A01.483Z"
+          loop
+          width="240"
+          height="492"
+        >
+          <Image
+            class="image"
+            src={feature3}
+            alt="Demo for Value Co-creation feature"
+          />
+        </video>
+      </div>
+      <h3 class="title-4 title-4--feature">
+        Value Co-creation: Feedback and Sharing
+      </h3>
+      <p class="feature-description">
+        After completing a coffee chat, you can provide feedback with the mentor
+        and choose whether to share them in public. What's even more surprising
+        is -- buy a coffee for your mentor! After a meeting, you can choose your
+        preferred coffee as an appreciation.
+      </p>
+    </div>
+    <div class="image-container image-container--original-prototype">
+      <video
+        class="video video-original-prototype"
+        autoplay
+        muted
+        controls
+        src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/sign/videos/original-prototype.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ2aWRlb3Mvb3JpZ2luYWwtcHJvdG90eXBlLndlYm0iLCJpYXQiOjE3MTA0MzY0MDYsImV4cCI6NDg2NDAzNjQwNn0.NwXr63sMYwkH6o2Ezi_UpLZQj_PC48cpyLXcYY8HwvQ&t=2024-03-14T17%3A13%3A26.094Z"
+        loop
+      >
+        <Image
+          class="image"
+          src={originalPrototype}
+          alt="Chinese version of Guiding Angel prototype"
+        />
+      </video>
+      <p class="caption caption--original-prototype">
+        The original prototype of Guiding Angel. I was responsible for the
+        visual design and prototyping.
+      </p>
+    </div>
+
+    <!-- HOW WE GOT THERE -->
+
+    <section class="section--black">
+      <div class="subsection--narrow-left subsection--interrupt">
+        <h2 class="tag-2-bold">HOW WE GOT THERE</h2>
+        <h3 class="title-4">Iteration and Testing</h3>
+        <p class="paragraph-1">
+          As the only visual designer in the team, my primary task is to assist
+          users in accessing the values we want to convey through a good
+          interface, ultimately completing the mission. To achieve one of our
+          most important principles: Create a space that feels comfortable and
+          pleasant, I created several versions of wireframes for some pages,
+          conducted user testing, and discussed with engineers.
+        </p>
+      </div>
+      <div class="iterations subsection">
+        <div class="iteration">
+          <div class="image-container image-container--iteration">
+            <Image class="image" src={iteration1} alt="original prototype" />
+          </div>
+        </div>
+        <div class="iteration">
+          <div class="image-container image-container--iteration">
+            <Image class="image" src={iteration2} alt="original prototype" />
+          </div>
+        </div>
+      </div>
+      <div class="subsection--narrow-left subsection--interrupt">
+        <h3 class="title-4">Design for communication and Collaboration</h3>
+        <p>
+          Though design system is not much important for a small project, it
+          truly helps me stay consistent and communicate with engineers and
+          other members. Additionally, when creating this prototype, two other
+          members expressed their interest in learning UI design and Figma. I
+          believe that establishing a design system will also help them learn
+          and understand some basics of UI design.
+        </p>
+      </div>
+      <div class="image-container image-container--design-system subsection">
+        <Image class="image" src={designSystem} alt="" />
+      </div>
+      <div class="subsection--interrupt subsection--narrow-left">
+        <h2 class="tag-2-bold">TAKEAWAY</h2>
+        <h3 class="title-4">What I Learned</h3>
+        <p>
+          My journey through this project provided several key insights, which
+          made me a better designer.
+        </p>
+      </div>
+
+      <div class="takeaway">
+        <div class="takeaway-column-container">
+          <div class="takeaway-item">
+            <h4 class="takeaway-item__title title-5">
+              Turn a huge and vague problem into a specific product
+            </h4>
+            <p>
+              It's very difficult to find a solution to a vague problem
+              directly; the best approach is to first clearly define the scope
+              before design. We didn't do very well in deciding on the Target
+              Audience, but this also taught me how to converge on the problem
+              with the team.
+            </p>
+          </div>
+          <div class="takeaway-item">
+            <h4 class="takeaway-item__title title-5">
+              Handoffs: Small iteration, quick conversation
+            </h4>
+            <p>
+              I was fortunate to collaborate with engineers to bring my
+              prototype to life. Due to the tight schedule, we closely
+              collaborated with each other. I found small iterations and
+              frequent discussions significantly facilitated the design
+              handoffs.
+            </p>
+          </div>
+        </div>
+        <div class="takeaway-column-container">
+          <div class="takeaway-item">
+            <h4 class="takeaway-item__title title-5">
+              Adopt different combos in different scenarios
+            </h4>
+            <p>
+              In this project, I apply lots of methods on the user research.
+              They’re great tools to help researchers conduct research, but
+              designers should know when to use these tools, rather than merely
+              replicating templates.
+            </p>
+          </div>
+          <div class="takeaway-item">
+            <h4 class="takeaway-item__title title-5">
+              Helping others to be more engaged and involved in the design
+              process
+            </h4>
+            <p>
+              Well, originally, I am good at teamwork and communication, but I
+              don’t quite understand why I aced it. This journey has deepened my
+              understanding of how to become an influential designer within a
+              team. Guiding and proactively sharing are among my key approaches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </section>
 </Layout>

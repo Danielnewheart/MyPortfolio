@@ -3,15 +3,40 @@
 ---
 
 <header class="header-section">
-  <div class="header-home"><a href="/">Hao-Wei Kao</a></div>
+  <div class="header-home"><a href="/">HAO-WEI KAO</a></div>
   <ul class="header-links">
-    <div class="header-work"><a href="./#work">Work</a></div>
-    <div class="header-about"><a href="./about">About</a></div>
-    <div class="header-play"><a href="./play">Play</a></div>
+    <li class="header-work"><a class="header-link" href="./#work">Work</a></li>
+    <li class="header-about">
+      <a class="header-link" href="./about">About</a>
+    </li>
+    <li class="header-play"><a class="header-link" href="./play">Play</a></li>
   </ul>
 </header>
 
 <style>
+  /* link animation */
+  .header-link {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .header-link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-neutral);
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: all 0.25s ease-in-out 0s;
+  }
+  .header-link:hover::before {
+    transform: scaleX(1);
+  }
+  /* ------------------------- */
   .header-section {
     z-index: 1;
     display: flex;
@@ -20,6 +45,7 @@
 
     font-weight: 300;
 
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     padding: 1.63rem;
