@@ -7,6 +7,20 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [react(), icon()],
   prefetch: {
-    defaultStrategy: 'viewport'
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
   },
+  image: {
+    domains: ['mxeyphnpicullbfsgzzz.supabase.co'],
+  },
+  experimental: {
+    clientPrerender: true,
+  },
+  // build: {
+  //     assetsPrefix: {
+  //         'png': "https://mxeyphnpicullbfsgzzz.supabase.co",
+  //         'jpg': "https://mxeyphnpicullbfsgzzz.supabase.co",
+  //         'jpeg': "https://mxeyphnpicullbfsgzzz.supabase.co",
+  //     },
+  // },
 });

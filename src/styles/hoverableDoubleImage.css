@@ -1,0 +1,66 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    padding: 0.75rem;
+    background: #3f3f3f;
+    border-radius: 2.625rem;
+    border: 1px #b1b1b1 solid;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+
+    cursor: pointer;
+}
+.image {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+
+    overflow: hidden;
+    border-radius: 2rem;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.image.hidden {
+    opacity: 0;
+}
+
+
+@media (max-width: 55rem) {
+    .image-container {
+        width: 100%;
+        max-width: 30rem;
+        grid-area: image;
+    }
+}
+
+@media (max-width: 30rem) {
+    .image-container {
+        max-width: 16rem;
+    }
+                    
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .image {
+        transition: opacity ease-in-out 0.5s;
+    }
+}
+
+
+/* specific image style */
+.why-1 {
+    object-position: center 60%;
+}
+
+.how-1 {
+    object-position: center 60%;
+}

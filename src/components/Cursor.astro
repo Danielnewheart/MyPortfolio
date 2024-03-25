@@ -45,7 +45,6 @@
           (target as Element)?.closest(".project-image-container") ||
           (target as Element)?.closest(".project-description-container");
 
-        const isTargetFooter = (target as Element)?.closest(".footer");
         // GSAP config
         gsap.to($el, {
           x: x - 40,

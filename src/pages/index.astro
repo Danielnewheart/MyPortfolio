@@ -35,7 +35,7 @@ const projects = [
 ];
 ---
 
-<Layout title="Hao-Wei Kao's Portfolio">
+<Layout title="Home">
   <main>
     <section class="fold fold-main">
       <!-- <GradientCircle top="0%" left="46.19%" /> -->
@@ -63,6 +63,7 @@ const projects = [
         </div>
       </div>
     </section>
+
     <section id="work" class="fold fold-projects">
       <h2 class="title title-projects">SELECTED PROJECT</h2>
       <Project project={projects[0]}>
@@ -89,11 +90,11 @@ const projects = [
         </div>
       </Project>
     </section>
-    <Footer />
   </main>
+  <Footer />
 </Layout>
 
-<style define:vars={{ noiseURL: `url("${noise.src}")` }}>
+<style is:global>
   .fold {
     display: flex;
     flex-direction: column;

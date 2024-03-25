@@ -1,0 +1,115 @@
+---
+// 定義接收的 props
+interface VideoLinkProps {
+  href: string;
+  videoSrc: string;
+  width: string;
+  height: string;
+  title: string;
+  status: string;
+  backgroundColor: string;
+}
+
+const { href, videoSrc, width, height, title, status, backgroundColor } =
+  Astro.props as VideoLinkProps;
+const aspectRatio = `${width} / ${height}`;
+---
+
+<a href={href} class="webdev-video-container" style={{ backgroundColor }}>
+  <video
+    class="webdev-video"
+    autoplay
+    muted
+    src={videoSrc}
+    loop
+    width={width}
+    height={height}
+    style={{ aspectRatio }}
+  >
+  </video>
+  <div class="webdev-video-cover"></div>
+  <div class="webdev-video-title-set">
+    <span class="webdev-video-title">{title}</span>
+    <span class="webdev-video-status">{status}</span>
+  </div>
+</a>
+
+<style>
+  .webdev-video-container {
+    display: block;
+    position: relative;
+
+    max-width: 65rem;
+    width: 100%;
+    padding: 2.8rem 3.1rem;
+    background-color: #ede9e1;
+    border-radius: 1rem;
+    box-shadow:
+      0px 2px 4px rgba(0, 0, 0, 0.1),
+      0px 4px 8px rgba(0, 0, 0, 0.15),
+      0px 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  .webdev-video {
+    width: 100%;
+    height: auto;
+    border-radius: 0.4rem;
+    /* box-shadow: 0px 33px 51.6px 4px rgba(0, 0, 0, 0.25);  */
+    box-shadow:
+      0px 2px 4px rgba(0, 0, 0, 0.1),
+      0px 4px 8px rgba(0, 0, 0, 0.15),
+      0px 16px 32px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden; /* 確保圓角效果可見 */
+  }
+  .webdev-video-title-set {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+    padding: 0 1.5rem;
+
+    opacity: 0;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .webdev-video-title {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  .webdev-video-status {
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  .webdev-video-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+  }
+
+  .webdev-video-container:hover > .webdev-video-title-set,
+  .webdev-video-container:hover > .webdev-video-status,
+  .webdev-video-container:hover > .webdev-video-cover {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .webdev-video-title-set,
+    .webdev-video-status,
+    .webdev-video-cover {
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+</style>

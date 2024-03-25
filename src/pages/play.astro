@@ -1,0 +1,424 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BentoGrid from "../components/BentoGrid";
+import BentoGridItem from "../components/BentoGridItem";
+import "../styles/BentoGrid.css";
+import { Image } from "astro:assets";
+
+import WebDevVideo from "../components/WebDevVideo.astro";
+---
+
+<Layout title="Play">
+  <main class="main">
+    <h1 class="title">Play</h1>
+
+    <h2 class="main-heading">Web Development</h2>
+    <div class="webdev">
+      <WebDevVideo
+        href="https://github.com/Danielnewheart/Guessle---Vision-Pro-Style"
+        videoSrc="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/videos/Guessle.mp4"
+        width="1824"
+        height="1080"
+        title="Guessle - A Vision Pro Styled Game"
+        status="Go to GitHub"
+        backgroundColor="#ede9e1"
+      />
+      <WebDevVideo
+        href="https://dftcuisine.netlify.app/"
+        videoSrc="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/videos/DFT.mp4"
+        width="1744"
+        height="1080"
+        title="DFT Cuisine"
+        status="Go to Website"
+        backgroundColor="#f2790a"
+      />
+      <WebDevVideo
+        href="#comming-soon"
+        videoSrc="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/videos/Slap.mp4"
+        width="1160"
+        height="720"
+        title="Slap - Chatting as quick as a slap"
+        status="Coming Soon"
+        backgroundColor="#d8aded"
+      />
+    </div>
+
+    <h2 class="main-heading">Graphic Design</h2>
+    <BentoGrid>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Wanderer-2.png"
+          alt="Wanderer concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Saxhub-1.png"
+          alt="Saxhub concert program, front"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/YiChi-1.png"
+          alt="YiChi's concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Saxhub-2.png"
+          alt="Saxhub concert program, back"
+          width={472}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Saxhub-3.jpg"
+          alt="Saxhub concert poster"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/YenYun-1.png"
+          alt="YenYun's concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Wanderer-3.png"
+          alt="Wanderer invitation card, front side"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/YiChi-2.jpg"
+          alt="YiChi's concert invitation card"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={3} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/YingTing-1.jpeg"
+          alt="YingTing's concert poster"
+          width={736}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoSax-4.jpg"
+          alt="A sax duet concert program"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoSax-3.jpg"
+          alt="A sax duet concert program"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoSax-2.png"
+          alt="A sax duet poster"
+          width={472}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/JuiChang-1.png"
+          alt="JuiChang's concert program"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={3} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/JingJuan-1.png"
+          alt="JingJuan's concert program"
+          width={736}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoPiano-4.png"
+          alt="A piano duet invitation card"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Saxhub-4.jpg"
+          alt="Saxhub's logo"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoPiano-2.png"
+          alt="A piano duet concert program"
+          width={472}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoPiano-3.jpg"
+          alt="A piano duet concert poster"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Wanderer-4.png"
+          alt="Wanderer invitation card, back side"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/ShiuanHung-Invitation-front.png"
+          alt="ShiuanHung's concert invitation, front side"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/BeiChia-invitation.jpg"
+          alt="BeiChia's concert invitation"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/PinHan-1.png"
+          alt="PinHan's concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/ShiuanHung-Invitation-back.png"
+          alt="ShiuanHung's concert invitation, back side"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Vincent-Winny-1.png"
+          alt="Vincent and Winny's concert invitation card, front side"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={3} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/JuiChang-2.png"
+          alt="JuiChang's concert poster"
+          width={736}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/DuoPiano-1.png"
+          alt="A piano duet concert program"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/HsuHan-1.jpg"
+          alt="Hsu Han's concert poster"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/ShiuanHung-poster.png"
+          alt="ShiuanHung's concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={2}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/HsuHan-2.png"
+          alt="HsuHan's concert invitation, front side"
+          width={472}
+          height={472}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/HsuHan-3.png"
+          alt="HsuHan's concert invitation, back side"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/JingJuan-2.png"
+          alt="JingJuan's concert program"
+          width={472}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/JuiChang-3.png"
+          alt="JuiChang's concert program"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={1} height={1}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/Vincent-Winny-2.png"
+          alt="Vincent and Winny's concert invitation card, back side"
+          width={208}
+          height={208}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+      <BentoGridItem width={2} height={3}>
+        <Image
+          class="bento-grid-item__image"
+          src="https://mxeyphnpicullbfsgzzz.supabase.co/storage/v1/object/public/images/BeiChia-poster.png"
+          alt="BeiChia's concert poster"
+          width={472}
+          height={736}
+          densities={[0.5, 1, 1.5, 2.5]}
+        />
+      </BentoGridItem>
+    </BentoGrid>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    background: var(--color-black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: 300;
+    word-wrap: break-word;
+  }
+  .main-heading {
+    font-size: 2.728rem;
+    font-weight: 400;
+    line-height: 110%;
+    word-wrap: break-word;
+
+    margin-bottom: 2rem;
+  }
+  .webdev {
+    margin-bottom: 4rem;
+    width: 70vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+</style>
